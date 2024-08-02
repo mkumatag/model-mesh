@@ -20,4 +20,6 @@ patches:
                 - key: kubernetes.io/arch
                   operator: In
                   values:
+                    - amd64
                     - ppc64le
+                    - s390x

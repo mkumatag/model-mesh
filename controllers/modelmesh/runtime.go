@@ -345,7 +345,7 @@ func addDomainSocketMount(rts *kserveapi.ServingRuntimeSpec, c *corev1.Container
 func (m *Deployment) addPassThroughPodFieldsToDeployment(deployment *appsv1.Deployment) error {
 	rts := m.SRSpec
 	// these fields map directly to pod spec fields
-	// supported architectures are "amd64", "arm64" and "s390x"
+	// supported architectures are "amd64", "arm64", ppc64le and "s390x"
 	deployment.Spec.Template.Spec.NodeSelector = rts.NodeSelector
 	deployment.Spec.Template.Spec.Tolerations = rts.Tolerations
 	archNodeSelector := corev1.NodeSelectorTerm{
@@ -353,7 +353,7 @@ func (m *Deployment) addPassThroughPodFieldsToDeployment(deployment *appsv1.Depl
 			{
 				Key:      "kubernetes.io/arch",
 				Operator: corev1.NodeSelectorOpIn,
-				Values:   []string{"amd64", "arm64", "s390x"},
+				Values:   []string{"amd64", "arm64", "s390x", "ppc64le"},
 			},
 		},
 	}

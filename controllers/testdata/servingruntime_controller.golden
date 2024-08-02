@@ -39,6 +39,7 @@ spec:
                 - amd64
                 - arm64
                 - s390x
+                - ppc64le
       containers:
       - command:
         - /opt/app/mlserver-adapter
@@ -352,6 +353,7 @@ spec:
                 - amd64
                 - arm64
                 - s390x
+                - ppc64le
       containers:
       - command:
         - /opt/app/mlserver-adapter
@@ -661,6 +663,7 @@ spec:
                 - amd64
                 - arm64
                 - s390x
+                - ppc64le
       containers:
       - env:
         - name: REST_PROXY_LISTEN_PORT
@@ -992,6 +995,7 @@ spec:
                 - amd64
                 - arm64
                 - s390x
+                - ppc64le
       containers:
       - command:
         - /opt/app/mlserver-adapter
@@ -1298,6 +1302,7 @@ spec:
                 - amd64
                 - arm64
                 - s390x
+                - ppc64le
       containers:
       - command:
         - /opt/app/ovms-adapter
@@ -1596,6 +1601,7 @@ spec:
                 - amd64
                 - arm64
                 - s390x
+                - ppc64le
       containers:
       - command:
         - /opt/app/torchserve-adapter
@@ -1897,6 +1903,7 @@ spec:
                 - amd64
                 - arm64
                 - s390x
+                - ppc64le
       containers:
       - command:
         - /opt/app/triton-adapter
@@ -2213,6 +2220,7 @@ spec:
                 - amd64
                 - arm64
                 - s390x
+                - ppc64le
       containers:
       - env:
         - name: MODEL_DIRECTORY_PATH
