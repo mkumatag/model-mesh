@@ -28,7 +28,7 @@ FROM ${DEV_IMAGE} AS build
 # don't provide "default" values (e.g. 'ARG TARGETARCH=amd64') for non-buildx environments,
 # see https://github.com/docker/buildx/issues/510
 ARG TARGETOS=linux
-ARG TARGETARCH=amd64
+ARG TARGETARCH=ppc64le
 
 LABEL image="build"
 
@@ -44,7 +44,7 @@ COPY version /etc/modelmesh-version
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
     GOOS=${TARGETOS:-linux} \
-    GOARCH=${TARGETARCH:-amd64} \
+    GOARCH=${TARGETARCH:-ppc64le} \
     CGO_ENABLED=0 \
     GO111MODULE=on \
     go build -a -o /workspace/manager main.go
